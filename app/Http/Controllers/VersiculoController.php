@@ -47,6 +47,9 @@ class VersiculoController extends Controller
      */
     public function destroy(string $id)
     {
-        return Versiculo::destroy($id);
+        if (Versiculo::destroy($id)){
+            return response()->json(['message'=>'Versículo excluído com sucesso']);
+        }
+
     }
 }
